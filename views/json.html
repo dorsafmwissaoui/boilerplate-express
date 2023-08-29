@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JSON Response</title>
+</head>
+<body>
+  <div id="json-response"></div>
+  
+  <script>
+    // Fetch the JSON data from the /json route
+    fetch('/json')
+      .then(response => response.json())
+      .then(data => {
+        // Display the JSON data in the HTML element
+        const jsonResponse = JSON.stringify(data);
+        document.getElementById('json-response').textContent = jsonResponse;
+      })
+      .catch(error => console.error('Error fetching JSON:', error));
+  </script>
+</body>
+</html>
